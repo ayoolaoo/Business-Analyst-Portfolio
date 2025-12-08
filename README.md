@@ -32,4 +32,4 @@ This section contains a list of completed projects as well as a brief descritpio
 
 **Skills Used**: Power Query data cleaning, DAX measure creation, data modeling, KPI design, and visual analytics.
 
-**Technologies**: Power BI Desktop, Power Query, DAX,
+**Technologies**: Power BI Desktop, Power Query, DAX
