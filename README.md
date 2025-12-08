@@ -9,7 +9,7 @@
 - [Portfolio Projects](#portfolio-projects)
 
   - PowerBI
- 	  - [Bike Sales Dashboard](./Bike%20Sales%20Dashboard/README.md)
+ 	  - [Bike Sales Dashboard](./Bike-Sales-Dashboard/README.md)
   - SQL
 		- name of Project
     - name of Project
