@@ -1,3 +1,6 @@
+## Dashboard Preview
+![Dashboard Screenshot](./screenshots/powerbidashboard.png)
+
 ### Project Overview
 
 This Power BI report analyzes bike sales across multiple European countries between 2011 and 2016. The goal is to provide a clear understanding of overall business performance through interactive KPI cards, time-series trends, country-level comparisons, and category-level insights. The dashboard supports decision-making by highlighting revenue growth, profitability shifts, and product contributions over time.
