@@ -35,7 +35,9 @@ This section contains a list of completed projects as well as a brief descritpio
 **Technologies**: Power BI Desktop, Power Query, DAX
 
 ## Bike Sales Data Exploration
-Code: Bike_Sales_Data_Exploration.sql
+Code: [Bike_Sales_Data_Exploration.sql](./Bike-Sales-Data-Exploration.sql)
+
+Bike_Sales_Data_Exploration.sql
 
 **Goal**: To clean, transform, and analyze a retail bike sales dataset by creating normalized tables, joining data sources, performing aggregations, ranking results, and using subqueries to answer business questions about revenue, customers, and product performance.
 
