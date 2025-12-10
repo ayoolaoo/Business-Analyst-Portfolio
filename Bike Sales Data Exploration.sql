@@ -1,7 +1,7 @@
 /*
 Bike Sales Data Exploration
 
-Skills Used: JDDL (ALTER TABLE, CREATE TABLE), DML (INSERT, UPDATE), Joins (INNER, LEFT, FULL via UNION), Window Functions, Aggregations, Subqueries, Data Cleaning, Analytical SQL
+Skills Used: DDL (ALTER TABLE, CREATE TABLE), DML (INSERT, UPDATE), Joins (INNER, LEFT, FULL via UNION), Window Functions, Aggregations, Subqueries, Data Cleaning, Analytical SQL
 
 */
 
