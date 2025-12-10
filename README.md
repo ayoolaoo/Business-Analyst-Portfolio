@@ -37,8 +37,6 @@ This section contains a list of completed projects as well as a brief descritpio
 ## Bike Sales Data Exploration
 **Code**: [Bike Sales Data Exploration.sql](https://github.com/ayoolaoo/Business-Analyst-Portfolio/blob/main/Bike%20Sales%20Data%20Exploration.sql)
 
-Bike_Sales_Data_Exploration.sql
-
 **Goal**: To clean, transform, and analyze a retail bike sales dataset by creating normalized tables, joining data sources, performing aggregations, ranking results, and using subqueries to answer business questions about revenue, customers, and product performance.
 
 **Description**: This project uses a raw bike sales dataset and performs end-to-end SQL processing. Steps include Data Loading, creating new tables, altering and populating columns, splitting a flat table into customer and sales tables, joining datasets, performing group-by aggregations, applying window functions for top-N analysis, and using scalar and IN-subqueries for deeper insights. The analysis helps uncover revenue trends across countries, customer demographics, and product categories.
