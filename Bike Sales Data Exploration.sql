@@ -1,6 +1,6 @@
 /*
 Bike Sales Data Exploration
-
+Link - https://www.kaggle.com/code/sadiqshah/bike-store-sales-in-europe
 Skills Used: DDL (ALTER TABLE, CREATE TABLE), DML (INSERT, UPDATE), Joins (INNER, LEFT, FULL via UNION), Window Functions, Aggregations, Subqueries, Data Cleaning, Analytical SQL
 
 */
