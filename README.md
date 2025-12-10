@@ -11,7 +11,7 @@
   - PowerBI
  	  - [Bike Sales Dashboard](./Bike-Sales-Dashboard/README.md)
   - SQL
-	- name of Project
+	- [Bike Sales Data Exploration](./Bike-Sales-Data-Exploration/README.md)
     - name of Project
   - Tableau
     -  Name of Project
@@ -33,3 +33,6 @@ This section contains a list of completed projects as well as a brief descritpio
 **Skills Used**: Power Query data cleaning, DAX measure creation, data modeling, KPI design, and visual analytics.
 
 **Technologies**: Power BI Desktop, Power Query, DAX
+
+## Bike Sales Data Exploration
+This project demonstrates SQL skills including table creation, altering tables, joins, subqueries, aggregation, window functions, and analytical queries used to explore sales trends across customers, products, and countries.
