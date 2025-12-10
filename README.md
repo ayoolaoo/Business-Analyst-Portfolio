@@ -35,4 +35,12 @@ This section contains a list of completed projects as well as a brief descritpio
 **Technologies**: Power BI Desktop, Power Query, DAX
 
 ## Bike Sales Data Exploration
-This project demonstrates SQL skills including table creation, altering tables, joins, subqueries, aggregation, window functions, and analytical queries used to explore sales trends across customers, products, and countries.
+Code: 
+
+**Goal**: To clean, transform, and analyze a retail bike sales dataset by creating normalized tables, joining data sources, performing aggregations, ranking results, and using subqueries to answer business questions about revenue, customers, and product performance.
+
+**Description**: This project uses a raw bike sales dataset and performs end-to-end SQL processing. Steps include Data Loading, creating new tables, altering and populating columns, splitting a flat table into customer and sales tables, joining datasets, performing group-by aggregations, applying window functions for top-N analysis, and using scalar and IN-subqueries for deeper insights. The analysis helps uncover revenue trends across countries, customer demographics, and product categories.
+
+**Skills**: DDL (ALTER TABLE, CREATE TABLE), DML (INSERT, UPDATE), Joins (INNER, LEFT, FULL via UNION), Window Functions, Aggregations, Subqueries, Data Cleaning, Analytical SQL.
+
+**Technology**: MySQL
