@@ -1,5 +1,6 @@
 /*
 Hospital Management Dataset
+Link - https://www.kaggle.com/datasets/kanakbaghel/hospital-management-dataset
 
 Skills Used: DDL, DML, Joins (INNER, LEFT), Multi-Table Joins (Patients, Doctors, Appointments, Treatments, Billing), Window Functions, Aggregations, Subqueries, Data Cleaning, Analytical SQL
 */
