@@ -35,7 +35,7 @@ This section contains a list of completed projects as well as a brief descritpio
 **Technologies**: Power BI Desktop, Power Query, DAX
 
 ## Bike Sales Data Exploration
-**Code**: [Bike_Sales_Data_Exploration.sql](sql/Bike_Sales_Data_Exploration.sql)
+**Code**: [Bike Sales Data Exploration.sql](sql/Bike_Sales_Data_Exploration.sql)
 
 Bike_Sales_Data_Exploration.sql
 
