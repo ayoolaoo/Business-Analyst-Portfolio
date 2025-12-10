@@ -11,7 +11,7 @@
   - PowerBI
  	  - [Bike Sales Dashboard](./Bike-Sales-Dashboard/README.md)
   - SQL
-	- [Bike Sales Data Exploration](./Bike-Sales-Data-Exploration/README.md)
+	- [Bike Sales Data Exploration](#Bike-Sales-Data-Exploration)
     - name of Project
   - Tableau
     -  Name of Project
