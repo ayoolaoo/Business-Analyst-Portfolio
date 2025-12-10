@@ -11,8 +11,9 @@
   - PowerBI
  	  - [Bike Sales Dashboard](./Bike-Sales-Dashboard/README.md)
   - SQL
+ 	- [Hospital Management Dataset](#Hospital-Management-Dataset)
 	- [Bike Sales Data Exploration](#Bike-Sales-Data-Exploration)
-    - name of Project
+   
   - Tableau
     -  Name of Project
   - Excel
@@ -34,6 +35,21 @@ This section contains a list of completed projects as well as a brief descritpio
 
 **Technologies**: Power BI Desktop, Power Query, DAX
 
+
+
+
+
+
+## Hospital Management Dataset
+**Code**: [Hospital Management Dataset.sql](https://github.com/ayoolaoo/Business-Analyst-Portfolio/blob/main/Hospital%20Management%20Dataset.sql)
+
+**Goal**: To analyze hospital operations by integrating patient, doctor, appointment, treatment, and billing data. The project focuses on understanding patient flow, doctor workload, treatment costs, and revenue patterns through multi-table joins, aggregations, and analytical SQL techniques.
+
+**Description**: This project uses a multi-table hospital management dataset and performs end-to-end SQL analysis. Steps include exploring and joining relational tables (patients, doctors, appointments, treatments, billing), performing group-by aggregations, analyzing doctor performance and patient activity, evaluating revenue sources, and using window functions and subqueries to answer operational and financial questions. The analysis reveals insights into appointment trends, treatment frequency, revenue distribution, and healthcare service utilization.
+
+**Skills**: SQL Joins (INNER, LEFT), Multi-Table Joins, Aggregations (SUM, COUNT, AVG), Window Functions (ROW_NUMBER), Subqueries (scalar & IN), Grouped Analysis, Analytical SQL.
+
+**Technology**: MySQL
 
 
 ## Bike Sales Data Exploration
