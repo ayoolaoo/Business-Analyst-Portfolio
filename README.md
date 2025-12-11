@@ -8,14 +8,15 @@
 
 - [Portfolio Projects](#portfolio-projects)
 
-  - PowerBI
- 	  - [Bike Sales Dashboard](./Bike-Sales-Dashboard/README.md)
   - SQL
  	- [Hospital Management Dataset](#Hospital-Management-Dataset)
 	- [Bike Sales Data Exploration](#Bike-Sales-Data-Exploration)
+ 
+  - PowerBI
+ 	  - [Bike Sales Dashboard](./Bike-Sales-Dashboard/README.md)
    
   - Tableau
-    -  Name of Project
+    -  [Bike Sales Dashboard](./Bike-Sales-Dashboard/README.md)
   - Excel
     - Name of Project   
   - R progamming
@@ -25,19 +26,6 @@
 
 ## Portfolio Projects
 This section contains a list of completed projects as well as a brief descritpion of each project
-
-## Bike Sales Dashboard
-**Goal**: To analyze European bike sales to gain insights into the revenue patterns, profit performance, and category-level contributions.
-
-**Summary**: This project delivers an interactive Power BI dashboard featuring six KPI cards, revenue and profit analysis by country, time-series revenue trends, and product category insights. It highlights year-over-year changes and overall business performance.
-
-**Skills Used**: Power Query data cleaning, DAX measure creation, data modeling, KPI design, and visual analytics.
-
-**Technologies**: Power BI Desktop, Power Query, DAX
-
-
-
-
 
 
 ## Hospital Management Dataset
@@ -62,3 +50,28 @@ This section contains a list of completed projects as well as a brief descritpio
 **Skills**: DDL (ALTER TABLE, CREATE TABLE), DML (INSERT, UPDATE), Joins (INNER, LEFT, FULL via UNION), Window Functions, Aggregations, Subqueries, Data Cleaning, Analytical SQL.
 
 **Technology**: MySQL
+
+
+
+## Bike Sales Dashboard (PowerBI)
+**Goal**: To analyze European bike sales to gain insights into the revenue patterns, profit performance, and category-level contributions.
+
+**Summary**: This project delivers an interactive Power BI dashboard featuring six KPI cards, revenue and profit analysis by country, time-series revenue trends, and product category insights. It highlights year-over-year changes and overall business performance.
+
+**Skills Used**: Power Query data cleaning, DAX measure creation, data modeling, KPI design, and visual analytics.
+
+**Technologies**: Power BI Desktop, Power Query, DAX
+
+
+
+## Bike Sales Dashboard (Tableau)
+**Goal:** To visualize bike sales trends across demographics, geography, and product categories using an interactive Tableau dashboard.
+
+**Description:** This dashboard presents key insights into bike sales performance, including revenue distribution, customer demographics, product category comparisons, and purchasing patterns. Interactive visual elements such as filters, drill-down views, and KPI cards allow stakeholders to explore sales behavior across different customer segments and regions.
+
+**Skills:** Data visualization, dashboard design, KPI creation, drill-down analysis, data storytelling.
+
+**Files:**  
+- **Bike_Sales_Dashboard.twb** — Tableau workbook  
+- **screenshots folder** — images of the dashboard for preview  
+
