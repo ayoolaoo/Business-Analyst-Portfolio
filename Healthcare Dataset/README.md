@@ -14,69 +14,19 @@ The goal is to understand patient mix, cost drivers, and clinical patterns acros
 
 This project follows a structured, end-to-end analytics workflow, including data import, cleaning, feature engineering, pivot-based exploration, dashboard design, and operational insight generation.
 
-1. Data Import & Review
+1. **Data Import & Review**: Loaded healthcare dataset into Excel, Verified column types and removed duplicate patient-visit entries, Checked for missing or inconsistent values
 
-Loaded healthcare dataset into Excel
+2. **Data Cleaning**: Standardized text fields (TRIM, CLEAN, PROPER), Corrected numeric formats for billing, dates, and ages, Created Length of Stay (LOS) column, Added billing flags (High Billing, LOS Flag), Categorized patients into Age Groups
 
-Verified column types and removed duplicate patient-visit entries
+3. **Feature Engineering:** High Billing indicator (75th percentile threshold), Long vs Short Stay flags, Per-Day Billing calculation, Created lookup tables for drugs and insurance types
 
-Checked for missing or inconsistent values
+4. **Analytical Pivot Tables**: Billing by Medical Condition, Gender Distribution, Admission Type Analysis, Test Results by Age Group, Billing by Length of Stay, Top 10 Most Expensive Visits
 
-2. Data Cleaning
+5. **Dashboard Development:** Built KPI cards, Created interactive Pivot Charts, Designed a clean, business-style dashboard layout, Added contextual insights beneath each visual
 
-Standardized text fields (TRIM, CLEAN, PROPER)
+6. **Interpretation & Insights**: Identified key cost drivers, Compared patient groups and visit types, Highlighted trends in billing, LOS, and clinical outcomes
 
-Corrected numeric formats for billing, dates, and ages
-
-Created Length of Stay (LOS) column
-
-Added billing flags (High Billing, LOS Flag)
-
-Categorized patients into Age Groups
-
-3. Feature Engineering
-
-High Billing indicator (75th percentile threshold)
-
-Long vs Short Stay flags
-
-Per-Day Billing calculation
-
-Created lookup tables for drugs and insurance types
-
-4. Analytical Pivot Tables
-
-Billing by Medical Condition
-
-Gender Distribution
-
-Admission Type Analysis
-
-Test Results by Age Group
-
-Billing by Length of Stay
-
-Top 10 Most Expensive Visits
-
-5. Dashboard Development
-
-Built KPI cards
-
-Created interactive Pivot Charts
-
-Designed a clean, business-style dashboard layout
-
-Added contextual insights beneath each visual
-
-6. Interpretation & Insights
-
-Identified key cost drivers
-
-Compared patient groups and visit types
-
-Highlighted trends in billing, LOS, and clinical outcomes
-
-Evaluated operational patterns across demographics and diagnoses
+**Evaluated operational patterns across demographics and diagnoses**
 1. Patient Gender Distribution (%)
 Chart: Pie chart showing male vs female proportions.
 Goal: To understand gender representation in hospital visits.
