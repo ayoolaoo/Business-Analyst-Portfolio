@@ -1,7 +1,7 @@
 ## Dashboard Preview
 [Bike Sales Dashboard Screenshot](https://github.com/ayoolaoo/Business-Analyst-Portfolio/blob/main/Bike-Sales-Dashboard/Bike%20Sales%20Dashboard%20(PowerBI)%20Screenshot.png)
 
-[Bike Sales Dashboard.pbix — Tableau packaged workbook](https://github.com/ayoolaoo/Business-Analyst-Portfolio/blob/main/Bike-Sales-Dashboard/Bike%20Sales.pbix)
+[Bike Sales Dashboard — PowerBI workbook](https://github.com/ayoolaoo/Business-Analyst-Portfolio/blob/main/Bike-Sales-Dashboard/Bike%20Sales.pbix)
 
 ### Project Overview
 
