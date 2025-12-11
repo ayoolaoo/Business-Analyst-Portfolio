@@ -18,7 +18,7 @@
   - Tableau
     -  [Bike Sales Dashboard (Tableau)](#Bike-Sales-Dashboard-Tableau)
   - Excel
-    - [Hospital Patient Cost and Utilization Analysis](#Hospital-Patient-Cost-and-Utilization-Analysis)  
+    - [Healthcare Dataset Analysis](#Healthcare-Dataset-Analysis)  
   - R progamming
     - Name of Project
     - Name of Project
@@ -77,7 +77,7 @@ This section contains a list of completed projects as well as a brief descritpio
 **Folder**: [Bike-Sales-Dashboard (Tableau)](https://github.com/ayoolaoo/Business-Analyst-Portfolio/tree/main/Bike%20Sales%20Dashboard%20(Tableau))
 
 
-## Hospital Patient Cost and Utilization Analysis
+## Healthcare Dataset Analysis
 
 **Goal:** To analyze hospital patient records in Excel to uncover key cost drivers, clinical patterns, admission behaviors, and utilization trends, and identify the patient groups and visit types contributing most to overall healthcare spending.
 
@@ -87,4 +87,4 @@ This section contains a list of completed projects as well as a brief descritpio
 
 **Technology:** Microsoft Excel
 
-**Folder**: [Bike-Sales-Dashboard (Tableau)](https://github.com/ayoolaoo/Business-Analyst-Portfolio/tree/main/Bike%20Sales%20Dashboard%20(Tableau))
+**Folder**: [Healthcare-Dataset-Analysis](https://github.com/ayoolaoo/Business-Analyst-Portfolio/tree/main/Healthcare%20Dataset)
