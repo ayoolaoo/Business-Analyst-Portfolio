@@ -16,7 +16,7 @@
  	  - [Bike Sales Dashboard](./Bike-Sales-Dashboard/README.md)
    
   - Tableau
-    -  [Bike Sales Dashboard](./Bike-Sales-Dashboard/README.md)
+    -  [Bike Sales Dashboard (Tableau)](./Bike-Sales-Dashboard-(Tableau)/README.md)
   - Excel
     - Name of Project   
   - R progamming
