@@ -72,10 +72,5 @@ This section contains a list of completed projects as well as a brief descritpio
 
 **Skills:** Data visualization, dashboard design, KPI creation, drill-down analysis, data storytelling.
 
-**Files:**  
-- **Bike_Sales_Dashboard.twb** — Tableau workbook  
-- **screenshots folder** — images of the dashboard for preview
-
-**Skills:** Data visualization, dashboard design, KPI creation, data storytelling, Tableau.
-
+**Folder**: [Bike-Sales-Dashboard (Tableau)](https://github.com/ayoolaoo/Business-Analyst-Portfolio/tree/main/Bike%20Sales%20Dashboard%20(Tableau))
 
