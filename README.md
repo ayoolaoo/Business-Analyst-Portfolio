@@ -67,11 +67,14 @@ This section contains a list of completed projects as well as a brief descritpio
 ## Bike Sales Dashboard (Tableau)
 **Goal:** To visualize bike sales trends across demographics, geography, and product categories using an interactive Tableau dashboard.
 
-**Description:** This dashboard presents key insights into bike sales performance, including revenue distribution, customer demographics, product category comparisons, and purchasing patterns. Interactive visual elements such as filters, drill-down views, and KPI cards allow stakeholders to explore sales behavior across different customer segments and regions.
+**Description:** This dashboard presents key insights into bike sales performance, including revenue distribution, customer demographics, product category comparisons, and purchasing patterns. Interactive visual elements such as filters, drill-down views, bar charts, line charts, and KPI cards allow stakeholders to explore sales behavior across different customer segments and regions.
 
 **Skills:** Data visualization, dashboard design, KPI creation, drill-down analysis, data storytelling.
 
 **Files:**  
 - **Bike_Sales_Dashboard.twb** — Tableau workbook  
-- **screenshots folder** — images of the dashboard for preview  
+- **screenshots folder** — images of the dashboard for preview
+
+**Skills:** Data visualization, dashboard design, KPI creation, data storytelling, Tableau.
+
 
