@@ -62,6 +62,7 @@ This section contains a list of completed projects as well as a brief descritpio
 
 **Technologies**: Power BI Desktop, Power Query, DAX
 
+**Folder**: [Bike-Sales-Dashboard](https://github.com/ayoolaoo/Business-Analyst-Portfolio/tree/main/Bike-Sales-Dashboard)
 
 
 ## Bike Sales Dashboard (Tableau)
