@@ -13,7 +13,7 @@
 	- [Bike Sales Data Exploration](#Bike-Sales-Data-Exploration)
  
   - PowerBI
- 	  - [Bike Sales Dashboard](./Bike-Sales-Dashboard/README.md)
+ 	  - [Bike Sales Dashboard (PowerBI)](#Bike-Sales-Dashboard-PowerBI)
    
   - Tableau
     -  [Bike Sales Dashboard (Tableau)](#Bike-Sales-Dashboard-Tableau)
