@@ -7,11 +7,11 @@
 
 This Power BI report analyzes bike sales across multiple European countries between 2011 and 2016. The goal is to provide a clear understanding of overall business performance through interactive KPI cards, time-series trends, country-level comparisons, and category-level insights. The dashboard supports decision-making by highlighting revenue growth, profitability shifts, and product contributions over time.
 
-#### Dataset Description
+### Dataset Description
 
 The dataset contains over 110,000 sales records with fields including transaction date, customer demographics, product category, sub-category, pricing details, order quantity, revenue, and profit. Additional fields such as Year, Month, and Age Group were created through data transformation to support trend and segmentation analysis.
 
-#### Dashboard Objectives
+### Dashboard Objectives
 
 Summarize the company’s sales and profitability using key financial indicators.
 
@@ -23,7 +23,7 @@ Understand the contribution of product categories (Bikes, Clothing, Accessories)
 
 Measure year-over-year changes in revenue, orders, and profit margin between 2013 and 2015.
 
-#### Key Performance Indicators
+### Key Performance Indicators
 The dashboard includes six KPIs:
 
 Total Revenue
@@ -40,7 +40,7 @@ Profit Margin Change (2013 to 2015)
 
 All year-over-year metrics were calculated using DAX measures with supporting numerator and denominator logic. Additional display measures were created for improved readability and direction indicators.
 
-#### Visualizations
+### Visualizations
 
 Revenue and Profit by Country:
 A comparative bar chart showing how each country contributes to revenue and profit. This helps identify top-performing markets and regions with strong margins.
@@ -65,7 +65,7 @@ Removing errors and duplicates
 
 The data model uses a single fact table with calculated columns and DAX measures. All KPI logic, percentage changes, and profitability calculations were implemented using DAX.
 
-#### Technical Skills Demonstrated
+### Technical Skills Demonstrated
 
 Data cleaning and transformation (Power Query)
 
@@ -79,7 +79,7 @@ Business metrics definition and interpretation
 
 How to Use the Dashboard
 
-#### Stakeholders can explore:
+### Stakeholders can explore:
 
 Country-level revenue and profit by clicking bars
 
