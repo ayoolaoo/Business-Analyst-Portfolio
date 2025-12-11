@@ -1,5 +1,5 @@
 ## Dashboard Preview
-[Dashboard Screenshot]([./screenshots/powerbidashboard.png](https://github.com/ayoolaoo/Business-Analyst-Portfolio/blob/main/Bike-Sales-Dashboard/Bike%20Sales%20Dashboard%20(PowerBI)%20Screenshot.png))
+[Dashboard Screenshot](https://github.com/ayoolaoo/Business-Analyst-Portfolio/blob/main/Bike-Sales-Dashboard/Bike%20Sales%20Dashboard%20(PowerBI)%20Screenshot.png))
 
 ### Project Overview
 
