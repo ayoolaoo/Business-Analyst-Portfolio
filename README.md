@@ -18,7 +18,7 @@
   - Tableau
     -  [Bike Sales Dashboard (Tableau)](#Bike-Sales-Dashboard-Tableau)
   - Excel
-    - Name of Project   
+    - [Hospital Patient Cost and Utilization Analysis](#Hospital-Patient-Cost-and-Utilization-Analysis)  
   - R progamming
     - Name of Project
     - Name of Project
@@ -72,5 +72,19 @@ This section contains a list of completed projects as well as a brief descritpio
 
 **Skills:** Data visualization, dashboard design, KPI creation, drill-down analysis, data storytelling.
 
+**Technology:** Tableau
+
 **Folder**: [Bike-Sales-Dashboard (Tableau)](https://github.com/ayoolaoo/Business-Analyst-Portfolio/tree/main/Bike%20Sales%20Dashboard%20(Tableau))
 
+
+## Hospital Patient Cost and Utilization Analysis
+
+**Goal:** To analyze hospital patient records in Excel to uncover key cost drivers, clinical patterns, admission behaviors, and utilization trends, and identify the patient groups and visit types contributing most to overall healthcare spending.
+
+**Description:** This project uses a synthetic hospital dataset and performs end-to-end Excel analysis, including data cleaning, transformation, segmentation, pivot-table modeling, calculated metrics, and interactive dashboard design. The dashboard visualizes patient demographics, medical conditions, billing patterns, test result distributions, and length-of-stay impacts, enabling stakeholders to quickly understand cost drivers and operational performance.
+
+**Skills:** Data Cleaning & Wrangling, Pivot Tables, Lookup Functions (XLOOKUP, VLOOKUP), Aggregations (SUMIF, AVERAGEIF, COUNTIF), KPI Design, Data Visualization (bar, pie, gauge, stacked charts), Dashboard Building, Insight Generation, Healthcare Cost Analysis.
+
+**Technology:** Microsoft Excel
+
+**Folder**: [Bike-Sales-Dashboard (Tableau)](https://github.com/ayoolaoo/Business-Analyst-Portfolio/tree/main/Bike%20Sales%20Dashboard%20(Tableau))
