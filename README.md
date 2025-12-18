@@ -2,6 +2,8 @@
 
 
 ## About
+Business Analyst with international experience, specializing in data analysis, stakeholder engagement, and cross-functional collaboration. Experienced in translating complex business needs into clear requirements, actionable insights, and measurable deliverables. Proven ability to support data-driven decision-making, process improvement, and strategic initiatives in fast-paced, regulated environments.
+
 
 ## Table of Contents
 - [About](#about)
