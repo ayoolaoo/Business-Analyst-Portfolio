@@ -1,1 +1,420 @@
+---
+title: "Urinary Biomarkers for Pancreatic Cancer Analysis"
+author: "Ayoola Okoro"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+##read table into R
+```{r}
+library(readr)
+urinarybiomarker  <- read_csv("Debernardi et al 2020 data.csv")
+urinarybiomarkerdocumentation <- read_csv("Debernardi et al 2020 documentation.csv")
+```
+
+
+#check the NAs in the table
+```{r}
+sum(is.na(urinarybiomarker))
+```
+
+
+##to see the number of NAs in each column in form of a dataframe
+```{r}
+urinarysumisna <- colSums(is.na(urinarybiomarker)) |> as.data.frame()
+```
+
+
+```{r}
+str(urinarybiomarker)
+table(urinarybiomarker$diagnosis)
+```
+
+
+##since diagnosis column is a numeric variable, 
+##we have to convert it to a factor before adding levels
+```{r}
+urinarybiomarker$diagnosis <- factor(urinarybiomarker$diagnosis,
+                                     levels = c(1, 2, 3),
+                                     labels = c("control", "benign","pdac"))
+```
+
+
+##confirm it worked by
+```{r}
+str(urinarybiomarker$diagnosis)
+table(urinarybiomarker$diagnosis)
+```
+
+
+##since sex column is a character variable, we have to convert it to a factor
+```{r}
+urinarybiomarker$sex <- as.factor(urinarybiomarker$sex)
+```
+
+
+##confirm it worked by
+```{r}
+str(urinarybiomarker$sex)
+table(urinarybiomarker$sex)                                     
+levels(urinarybiomarker$sex)
+```
+
+
+##since stage column is a character variable, we have to convert it to a factor and order it as well                                    
+```{r}
+urinarybiomarker$stage <- factor(urinarybiomarker$stage, 
+                                 levels = c("IA", "IB", "IIA", "IIIB", "III", 
+                                          "IV"), ordered = TRUE)
+```
+
+
+##confirm it worked by
+```{r}
+levels(urinarybiomarker$stage)                                       
+str(urinarybiomarker$stage)
+table(urinarybiomarker$stage, useNA = "ifany") 
+```
+
+
+##Convert benign_sample_diagnosis into a factor (it’s probably character right now) 
+##and then list the top 10 most frequent diagnoses among benign samples.
+```{r}
+urinarybiomarker$benign_sample_diagnosis <- as.factor(urinarybiomarker$benign_sample_diagnosis)
+table <- table(urinarybiomarker$benign_sample_diagnosis, useNA = "ifany") |> as.data.frame()
+library(dplyr)
+top_10 <- table|>
+  arrange(desc(Freq)) |>
+  head(top_10, n = 10)
+```
+
+
+##create a binary flag colum for - has_REG1A, has_CA19_9, has_stage, 
+##and has_benign_diagnosis. this column will have yes for values nputed and no for values that are NA
+```{r}
+urinarybiomarker <- urinarybiomarker |>
+  mutate(has_stage = ifelse(is.na(stage),"no", "yes"), 
+         has_benign_sample_diagnosis = ifelse(is.na(benign_sample_diagnosis),"no", "yes"), 
+         has_plasma_CA19_9 = ifelse(is.na(plasma_CA19_9),"no", "yes"), 
+         has_REG1A = ifelse(is.na(REG1A),"no", "yes"))
+```
+
+
+##Group by diagnosis and sample_origin 
+##to see which patient categories have the most missing values for these biomarkers.
+```{r}
+urinarybiomarker |>
+  group_by(diagnosis, sample_origin)|>
+  summarise(missing_stage = sum(is.na(stage)), 
+            missing_benign_diag = sum(is.na(benign_sample_diagnosis)),
+            missing_plasma = sum(is.na(plasma_CA19_9)),
+            missing_REG1A = sum(is.na(REG1A)))
+```
+
+
+##Group the data by diagnosis, then calculate the mean, median, and standard deviation (sd) 
+##for each biomarker (LYVE1, REG1B, TFF1, and REG1A).
+```{r}
+urinarybiomarker |>
+  group_by(diagnosis)|>
+  summarise(avg_TFF1= mean(TFF1), avg_REG1A= mean(REG1A, na.rm  = TRUE), avg_REG1B = mean(REG1B), avg_LYVE1 = mean(LYVE1), 
+            median_TFF1= median(TFF1), median_REG1A= median(REG1A, na.rm  = TRUE), median_REG1B = median(REG1B), median_LYVE1 = median(LYVE1), 
+            sd_TFF1= sd(TFF1), sd_REG1A= sd(REG1A, na.rm  = TRUE), sd_REG1B = sd(REG1B), sd_LYVE1 = sd(LYVE1))
+```
+
+
+#load dplyr package
+```{r}
+library(dplyr)
+```
+
+
+##Visualize these results — create side-by-side boxplots showing how each biomarker 
+##(LYVE1, REG1B, TFF1, and REG1A) varies across diagnosis groups.
+##first did all the boxplots individually
+```{r}
+library(ggplot2)
+ggplot(data = urinarybiomarker, mapping = aes(diagnosis, LYVE1, fill = diagnosis)) +
+  geom_boxplot() +
+  labs(title = "Boxplot of LYVE1 Biomarker by Diagnosis") +
+  xlab("Diagnosis")
+ggplot(data = urinarybiomarker, mapping = aes(diagnosis, REG1B, fill = diagnosis)) +
+  geom_boxplot() +
+  labs(title = "Boxplot of REG1B Biomarker by Diagnosis") +
+  xlab("Diagnosis")
+ggplot(data = urinarybiomarker, mapping = aes(diagnosis, REG1A, fill = diagnosis)) +
+  geom_boxplot() +
+  labs(title = "Boxplot of REG1A Biomarker by Diagnosis") +
+  xlab("Diagnosis")
+ggplot(data = urinarybiomarker, mapping = aes(diagnosis, TFF1, fill = diagnosis)) +
+  geom_boxplot() +
+  labs(title = "Boxplot of TFF1 Biomarker by Diagnosis") +
+  xlab("Diagnosis")
+```
+
+
+##to make all plot at once- using facetwrap,
+#then reshape your data into a long format, taking the four biomarker columns 
+##and stacking them into two column- that will have the biomarker name and the value
+```{r}
+library(tidyr)
+biomarker_long <- urinarybiomarker |>
+  pivot_longer(cols = c(LYVE1, REG1B, REG1A, TFF1),
+               names_to = "biomarker",
+               values_to = "value")
+```
+
+
+##then using the new table created, use the ggplot and facet_wrap function
+```{r}
+ggplot(data = biomarker_long, mapping = aes(diagnosis, value, fill = diagnosis)) +
+  geom_boxplot() +
+  facet_wrap(~biomarker, scales = "free_y") +
+  labs(title = "Urinary Biomarker by Diagnosis", 
+       x = "Diagnosis",
+       y = "Concentration (ng/ml)") +
+    theme_test()
+  
+```
+
+
+##create summary statistics for age and creatinine grouped by diagnosis.
+```{r}
+urinarybiomarker |>
+  group_by(diagnosis) |>
+  summarise(avg_age= mean(age), avg_creatinine = mean(creatinine), 
+            median_age= median(age), median_creatinine= median(creatinine), 
+            sd_age= sd(age), sd_creatinine = sd(creatinine))
+```
+
+
+##OR
+```{r}
+creatinine_age <- c("creatinine","age")
+by_creatinine_age_and_diagnosis <- urinarybiomarker %>%
+  group_by(diagnosis) %>%
+  summarise(across(all_of(creatinine_age),
+                   list(mean = ~mean(., na.rm = TRUE),
+                        median = ~median(., na.rm = TRUE),
+                        sd = ~sd(., na.rm = TRUE)),
+                   .names = "{.col}_{.fn}"))
+```
+
+
+##Compute and plot average LYVE1, REG1B, REG1A, TFF1 by stage (ordered) ##for only patients diagnosed with PDAC.  
+```{r}
+biomarkers <- c("LYVE1","REG1B","TFF1","REG1A")
+PDAC_only <- urinarybiomarker |>
+  filter(diagnosis == "pdac") |>
+  group_by(stage) |>
+  summarise(across(all_of(biomarkers), 
+                   list(mean = ~mean(., na.rm = TRUE))))
+ggplot(data = PDAC_only, mapping = aes(x = stage, y = LYVE1_mean, fill = stage)) +
+  geom_col() +
+  labs(title = "Average LYVE1 values for PDAC patients by stage", 
+       x = "Stage", 
+       y = "Average LYVE1")
+ggplot(data = PDAC_only, mapping = aes(x = stage, y = REG1B_mean, fill = stage)) +
+  geom_col() +
+  labs(title = "Average REG1B values for PDAC patients by stage", 
+       x = "Stage", 
+       y = "Average REG1B")
+ggplot(data = PDAC_only, mapping = aes(x = stage, y = REG1A_mean, fill = stage)) +
+  geom_col() +
+  labs(title = "Average REG1A values for PDAC patients by stage", 
+       x = "Stage", 
+       y = "Average REG1A")
+ggplot(data = PDAC_only, mapping = aes(x = stage, y = TFF1_mean, fill = stage)) +
+  geom_col() +
+  labs(title = "average TFF1 values for PDAC patients by stage", 
+       x = "Stage", 
+       y = "Average TFF1")
+```
+
+
+##OR
+```{r}
+PDAC_biomarker_long <- PDAC_only |>
+  pivot_longer(cols = c(LYVE1_mean, REG1B_mean, REG1A_mean, TFF1_mean),
+               names_to = "biomarker",
+               values_to = "value")
+
+ggplot(data = PDAC_biomarker_long, mapping = aes(stage, value, fill = stage)) +
+  geom_col() +
+  facet_wrap(~biomarker, scales = "free_y") +
+  labs(title = "Average urinary values for PDAC patients by stage", 
+       x = "Stage",
+       y = "Average Concentration (ng/ml)") 
+```
+
+
+##Compare age distributions across diagnosis (Control, Benign, PDAC)
+```{r}
+ggplot(data = urinarybiomarker, mapping = aes(diagnosis, age, fill = diagnosis)) +
+  geom_boxplot() +
+  labs(title = "Age distribution by diagnosis", 
+       x = "Diagnosis",
+       y = "Age") +
+  theme_test()
+```
+
+
+##Make a density plot of age filled by diagnosis to visualize overlapping age distributions.
+```{r}
+ggplot(data =urinarybiomarker, mapping = aes(x = age, fill = diagnosis)) +
+  geom_density(alpha = 0.7)+
+  labs(title = "Average age by diagnosis", x = "Age", y = "Density") +
+  theme_test()
+```
+  
+  
+##Compute the average creatinine for each diagnosis (Control, Benign, PDAC), then make a column chart of these averages. 
+##Add value labels on the bars and order the bars from highest to lowest.
+```{r}
+average_creatinine_by_diagnosis <- urinarybiomarker |>
+  group_by(diagnosis) |>
+  summarise(avg_creatinine = mean(creatinine))
+ggplot(data = average_creatinine_by_diagnosis, mapping = aes(x = reorder(diagnosis, -avg_creatinine), y = avg_creatinine, fill = diagnosis)) +
+  geom_col() +
+  labs(title = "Average creatine concentration by diagnosis", x = "Diagnosis", y = "Average Creatinine Concentration (ng/ml)") +
+  theme_classic() +
+  geom_text(aes(label = round(avg_creatinine, 2)), vjust = -.7)
+```
+
+
+##Compare mean biomarker levels (LYVE1, REG1B, REG1A, TFF1) 
+##across sample_origin (BPTB, ESP, LIV, UCL).
+##first group and summarize the mean and save as a table
+```{r}
+sample_origin <- urinarybiomarker |>
+  group_by(sample_origin) |>
+  summarise(across(all_of(biomarkers),
+                   list(mean = ~mean(., na.rm = TRUE)),
+                   .names = "{.col}_{.fn}"))
+```
+
+
+#then plot the barcharts individually to see
+```{r}
+ggplot(data = sample_origin, mapping = aes(x = sample_origin, LYVE1_mean, fill = sample_origin)) +
+  geom_col() +
+  labs(title = "Average LYVE1 Concentration by sample origin", 
+       x = "Sample Origin",
+       y = "Average LYVE1 Concentration (ng/ml)") +
+  theme_classic()
+ggplot(data = sample_origin, mapping = aes(x = sample_origin, REG1B_mean, fill = sample_origin)) +
+  geom_col() +
+  labs(title = "Average REG1B Concentration by sample origin", 
+       x = "Sample Origin",
+       y = "Average REG1B Concentration (ng/ml)") +
+  theme_classic()
+ggplot(data = sample_origin, mapping = aes(x = sample_origin, REG1A_mean, fill = sample_origin)) +
+  geom_col() +
+  labs(title = "Average REG1A Concentration by sample origin", 
+       x = "Sample Origin",
+       y = "Average REG1A Concentration (ng/ml)") +
+  theme_classic()
+ggplot(data = sample_origin, mapping = aes(x = sample_origin, TFF1_mean, fill = sample_origin)) +
+  geom_col() +
+  labs(title = "Average TFF1 Concentration by sample origin", 
+       x = "Sample Origin",
+       y = "Average TFF1 Concentration (ng/ml)") +
+  theme_classic()
+```
+
+
+##to plot all at once, you need to pivot the biomarkers into one column
+#and values into another column, then you need use the facet_wrap function 
+```{r}
+sample_origin_long <- sample_origin |>
+  pivot_longer(cols = c(LYVE1_mean, REG1B_mean, TFF1_mean, REG1A_mean), 
+               names_to = "biomarker", 
+               values_to = "Average_values")
+ggplot(sample_origin_long, mapping = aes(sample_origin, Average_values, fill = sample_origin)) +
+  geom_col() +
+  facet_wrap(~biomarker, scales = "free_y") +
+  labs(title = "Average Urinary Biomarker by Sample Origin", 
+       x = "Sample Origin", 
+       y = "Average Urinary Biomarker") +
+  theme_classic()
+```
+
+
+##Plot the distribution of plasma_CA19_9 (non-missing only) 
+##by diagnosis, faceted by patient_cohort.
+##filter rows of plasma_CA19_9 column with values and save as plasma_CA19_9_withoutna
+```{r}
+plasma_CA19_9_withoutna <- urinarybiomarker |>
+  filter(!is.na(plasma_CA19_9))
+```
+
+
+##densityplot 
+```{r}
+ggplot(data = plasma_CA19_9_withoutna, mapping = aes(x = plasma_CA19_9, fill = diagnosis)) +
+  geom_density(alpha = 0.7)+
+  labs(title = "Distribution of plasma_CA19_9 by diagnosis and cohort", x = "Plasma CA19-9 (U/ml)", y = "Density") +
+  xlim(0, 100) +
+  ylim(0,0.04) +
+  theme_test() +
+  facet_wrap(~patient_cohort, scales = "free_y")
+```
+
+
+##Make boxplots of plasma_CA19_9 by diagnosis, faceted by patient_cohort.
+##consider using scale_y_log10() to show all groups clearly.
+```{r}
+ggplot(data = plasma_CA19_9_withoutna, mapping = aes(x = diagnosis, y = plasma_CA19_9, fill = diagnosis)) +
+  geom_boxplot() +
+  labs(title = "Distribution of plasma_CA19_9 by diagnosis and cohort", x = "Diagnosis", y = "Plasma CA19-9 (U/ml, log scale)") +
+  theme_test() +
+  facet_wrap(~patient_cohort, scales = "free_y") +
+  scale_y_log10()
+```
+
+
+##Create a stacked bar chart showing the proportion of each 
+##diagnosis (Control, Benign, PDAC) within each sample_origin.
+```{r}
+ggplot(data = urinarybiomarker, mapping = aes(x = sample_origin, fill = diagnosis)) +
+  geom_bar(position = "fill") +
+  labs(title = "Proportion of diagnosis within each sample_origin", x = "Sample Origin", y = "Percentage") +
+  theme_test() +
+  scale_y_continuous(labels = scales::percent)
+```
+
+
+##Correlation & Trend Analysis
+##Compute and Visualize Correlation Matrix of Biomarkers
+```{r}
+biomarker_only <- urinarybiomarker |>
+  select(creatinine:REG1A)
+```
+
+
+#to view the correlation numbers
+```{r}
+biomarkers_cor_pear <- cor(biomarker_only, use = "complete.obs", method = "pearson")
+```
+
+
+#use = "complete.obs" tells R to skip missing values.
+#method can be "pearson", "spearman", or "kendall".
+#to visulaize/plot the analysis
+```{r}
+library(corrplot)
+corrplot(biomarkers_cor_pear,
+         method = "color",       # use colored tiles
+         type = "lower",         # show lower/upper triangle
+         addCoef.col = "black",  # print correlation numbers
+         tl.col = "black",       # color for labels
+         tl.srt = 45,            # rotate labels
+         number.cex = 0.7)      # size of numbers
+```
 
