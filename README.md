@@ -22,8 +22,7 @@ Business Analyst with international experience, specializing in data analysis, s
   - Excel
     - [Healthcare Dataset Analysis](#Healthcare-Dataset-Analysis)  
   - R progamming
-    - Name of Project
-    - Name of Project
+    - [Urinary Biomarkers for Pancreatic Cancer](#Urinary-Biomarkers-for-Pancreatic-Cancer)
 
 
 ## Portfolio Projects
@@ -90,3 +89,17 @@ This section contains a list of completed projects as well as a brief descritpio
 **Technology:** Microsoft Excel
 
 **Folder**: [Healthcare-Dataset-Analysis](https://github.com/ayoolaoo/Business-Analyst-Portfolio/tree/main/Healthcare%20Dataset)
+
+
+## Urinary Biomarkers for Pancreatic Cancer
+
+**Goal:** To explore and summarize urinary and plasma biomarkers associated with pancreatic cancer by analyzing clinical, demographic, and biomarker data, and to identify patterns across diagnosis groups, disease stages, and sample origins.
+
+**Description:** This project analyzes a pancreatic cancer biomarker dataset from Debernardi et al. (2020) using R. The workflow includes data import and validation, missing-value assessment, variable type conversion, and feature engineering to create completeness indicators for key clinical and biomarker variables. Exploratory data analysis is performed to examine biomarker distributions, demographic characteristics, and clinical attributes across diagnosis groups (Control, Benign, PDAC).
+ The analysis computes group-wise summary statistics (mean, median, standard deviation) for multiple urinary biomarkers (LYVE1, REG1B, REG1A, TFF1), creatinine, and age, stratified by diagnosis, disease stage, sample origin, and patient cohort. Visualization techniques such as boxplots, density plots, stacked bar charts, faceted plots, and correlation heatmaps are used to compare biomarker behavior across clinical subgroups and to assess relationships between biomarkers and covariates. The entire analysis is organized in a reproducible R Markdown workflow.
+
+**Skills:** Data Cleaning & Quality Assessment, Missing Data Analysis, Feature Engineering, Exploratory Data Analysis (EDA), Grouped Aggregations, Summary Statistics, Data Reshaping (long vs wide format), Data Visualization, Faceted Plotting, Correlation Analysis, Reproducible Reporting, Debugging & Workflow Organization.
+
+**Technology:** R, R Markdown, tidyverse (dplyr, tidyr, readr), ggplot2, corrplot, knitr
+
+**Folder**: [Urinary-Biomarkers-for-Pancreatic-Cancer](https://github.com/ayoolaoo/Business-Analyst-Portfolio/tree/main/Healthcare%20Dataset)
