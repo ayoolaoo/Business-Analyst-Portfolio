@@ -102,4 +102,4 @@ This section contains a list of completed projects as well as a brief descritpio
 
 **Technology:** R, R Markdown, tidyverse (dplyr, tidyr, readr), ggplot2, corrplot, knitr
 
-**Folder**: [Urinary-Biomarkers-for-Pancreatic-Cancer](https://github.com/ayoolaoo/Business-Analyst-Portfolio/tree/main/Urinary%20Biomarkers%20for%20Pancreatic%20Cancer)
+**Folder**: [Urinary Biomarkers for Pancreatic Cancer](https://github.com/ayoolaoo/Business-Analyst-Portfolio/tree/main/Urinary%20Biomarkers%20for%20Pancreatic%20Cancer)
